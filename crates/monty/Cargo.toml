@@ -42,6 +42,7 @@ speedate = "0.17.0"
 itertools = "0.14.0"
 jiter = { version = "0.15.0", features = ["num-bigint"] }
 monty-macros = { workspace = true }
+monty-types = { workspace = true }
 
 [features]
 # ref-count-return changes behavior to return information on reference counts to check they're correct
@@ -54,7 +55,7 @@ ref-count-return = ["test-hooks"]
 memory-model-checks = []
 # test-hooks exposes small internal helpers needed by integration tests that
 # exercise production behavior without duplicating implementation details.
-test-hooks = []
+test-hooks = ["monty-types/test-hooks"]
 
 [dev-dependencies]
 tempfile = "3"
